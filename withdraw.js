@@ -9,10 +9,9 @@
     6. celculate the new balance total
     6-5. set the new balance total
     7. clear the withdraw input field
+   8. withdraw amount can not be negative
 
 */
-
-
 
 
 //step-1: add event listener to the withdraw button
@@ -38,16 +37,28 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const previousBalanceTotalString = balanceTotal.innerText;
     // convert string to float
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
+
+     if (withdrawAmount > previousBalanceTotal) {
+      alert('You can not withdraw more than what you have in your account');
+      return;
+     }
     
     // step-6
     const newBalanceTotal = previousBalanceTotal - withdrawAmount;
     // update balance total amount
     balanceTotal.innerText = newBalanceTotal;
 
-
-
   // step-7
     withdrawInput.value = '';
+
+    
+    
+
+
+  
+
+
+
 
 
 });

@@ -21,16 +21,25 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const withdrawAmountString = withdrawInput.value;
     // convert string to float
     const withdrawAmount = parseFloat(withdrawAmountString);
+
+   // step-7
+   withdrawInput.value = '';
+
+
+     if (isNaN(withdrawAmount)){
+      alert('Please enter a valid number');
+      return;
+     }
+
+
+
     // step-3
     const withdrawTotal = document.getElementById('withdraw-total');
     const previousWithdrawTotalString = withdrawTotal.innerText;
     // convert string to float
     const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
    
-    // step-4
-    const newWithdrawTotal = previousWithdrawTotal + withdrawAmount;
-    // update withdraw total amount
-    withdrawTotal.innerText = newWithdrawTotal;
+ 
 
     // step-5
     const balanceTotal = document.getElementById('balance-total');
@@ -38,18 +47,24 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     // convert string to float
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 
+   
+
      if (withdrawAmount > previousBalanceTotal) {
       alert('You can not withdraw more than what you have in your account');
       return;
      }
+
+    // step-4
+    const newWithdrawTotal = previousWithdrawTotal + withdrawAmount;
+    // update withdraw total amount
+    withdrawTotal.innerText = newWithdrawTotal;
     
     // step-6
     const newBalanceTotal = previousBalanceTotal - withdrawAmount;
     // update balance total amount
     balanceTotal.innerText = newBalanceTotal;
 
-  // step-7
-    withdrawInput.value = '';
+  
 
     
     

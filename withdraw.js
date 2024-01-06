@@ -25,7 +25,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
    // step-7
    withdrawInput.value = '';
 
-
+  // step-8
      if (isNaN(withdrawAmount)){
       alert('Please enter a valid number');
       return;
@@ -63,17 +63,5 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const newBalanceTotal = previousBalanceTotal - withdrawAmount;
     // update balance total amount
     balanceTotal.innerText = newBalanceTotal;
-
-  
-
-    
-    
-
-
-  
-
-
-
-
 
 });

@@ -13,6 +13,7 @@ document.getElementById('btn-submit').addEventListener('click', function (){
         // step-4: check email and password valid user or not
         if (userEmail == 'sifat@gmail.com' && userPassword == 'sifat22'){
             window.location.href = 'bank.html';
+            alert('welcome to would bank');
         }
         else{
             alert('wrong email or password');
